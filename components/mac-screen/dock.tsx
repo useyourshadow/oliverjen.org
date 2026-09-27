@@ -33,7 +33,7 @@ export default function Dock() {
 
     const handleItemClick = useCallback(
         (item: DockItem) => {
-            if (item.label === "My Raycast") {
+            if (item.label === "Ribit") {
                 api?.scrollTo(4);
                 return;
             }
@@ -77,15 +77,7 @@ export default function Dock() {
             showInfo: false,
             link: false,
         },
-        {
-            src: "/dock/instagram.png",
-            alt: "instagram icon",
-            className: "rounded-xl cursor-pointer",
-            label: "Instagram",
-            url: "/instagram",
-            showInfo: false,
-            link: false,
-        },
+        
         {
             src: "/dock/github.png",
             alt: "github icon",
@@ -99,47 +91,24 @@ export default function Dock() {
             src: "/dock/raycast.png",
             alt: "raycast icon",
             className: "rounded-xl cursor-pointer",
-            label: "My Raycast",
-            url: "",
+            label: "Ribit",
+            url: "https://apps.apple.com/us/app/ribit-share-rides/id6752734297",
             showInfo: false,
-            link: false,
-        },
-        {
-            src: "/dock/flightcn.png",
-            alt: "flightcn icon",
-            className: "rounded-xl cursor-pointer",
-            label: "flightcn",
-            url: "https://flightcn.yencheng.dev/",
-            showInfo: false,
-            link: false,
+            link: true,
         },
         {
             src: "/dock/subflow.png",
             alt: "subflow icon",
             className: "rounded-xl cursor-pointer",
-            label: "Subflow",
-            url: "https://subflow.ing/",
+            label: "Minecraft Mod",
+            url: "https://www.curseforge.com/minecraft/mc-mods/speedrun-swap",
             showInfo: true,
             link: true,
             info: {
-                title: "Subflow",
+                title: "SpeedRun Mod",
                 description:
                     "Easily flow through your subscriptions with Subflow. Track spending, organize recurring payments, and take control of your subscription management. Whether it’s Netflix, Spotify, or any other recurring expenses, Subflow keeps everything organized in one place.",
-                tech: "TypeScript, Next.js, Tailwind CSS, MongoDB, Clerk",
-                picture: [
-                    {
-                        src: "/subflow/1.png",
-                        description: "",
-                    },
-                    {
-                        src: "/subflow/2.png",
-                        description: "",
-                    },
-                    {
-                        src: "/subflow/3.png",
-                        description: "",
-                    },
-                ],
+                
                 style: {
                     border: "border-[#faf0e6]",
                     bg: "bg-[#514f50]",
@@ -149,38 +118,7 @@ export default function Dock() {
                 },
             },
         },
-        {
-            src: "/dock/coffee-diary.png",
-            alt: "coffee diary icon",
-            className: "rounded-xl bg-[#FAF9F2] cursor-pointer",
-            label: "Coffee Diary",
-            url: "https://www.coffee-diary.com/",
-            showInfo: true,
-            link: false,
-            info: {
-                title: "Coffee Diary",
-                description:
-                    "Engineers often need a cup of coffee to accompany their coding sessions each day, and every cup of coffee has its unique flavor worth documenting. This inspired the idea for the Coffee Diary project.\nCoffee Diary allows users to record their daily coffee experiences through a JSON file, including details like coffee bean types, origins, and flavor descriptions. These records are then visualized into beautiful SVG graphics for documenting and sharing their coffee journal.\nUsers simply need to create a file named coffee-diary.json in their GitHub repository and fill it out according to the specified format. Once completed, the system will generate a corresponding coffee journal SVG image for personal display or sharing with others. Users can even access their records directly on the Coffee Diary website, making the entire process efficient and convenient.\nCoffee Diary not only enhances the convenience of recording and sharing coffee experiences but also offers developers a fun way to integrate life and technology, presenting each day's coffee memories in a visually appealing format.",
-                tech: "TypeScript, Next.js, Tailwind CSS",
-                picture: [
-                    {
-                        src: "/coffee-diary/1.png",
-                        description: "Personal Coffee Diary",
-                    },
-                    {
-                        src: "/coffee-diary/2.png",
-                        description: "Coffee Diary SVG",
-                    },
-                ],
-                style: {
-                    border: "border-white-brown-600",
-                    bg: "bg-white-brown-400",
-                    secondBg: "bg-white-brown-600/50",
-                    icon: "text-white-brown-600",
-                    text: "text-white-black-900",
-                },
-            },
-        },
+       
     ];
 
     return (

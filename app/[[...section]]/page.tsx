@@ -5,10 +5,7 @@ import Banner from "@/components/banner";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HomeCarousel from "@/components/home-carousel";
-import Live from "@/components/live";
 import Portfolio from "@/components/portfolio";
-import Raycast from "@/components/raycast";
-import Travel from "@/components/travel";
 import { CarouselItem } from "@/components/ui/carousel";
 import { HOME_SECTIONS } from "@/lib/home-sections";
 
@@ -21,64 +18,37 @@ export const dynamicParams = false;
 const SECTION_METADATA: Record<string, Metadata> = {
     portfolio: {
         title: "Portfolio",
-        description:
-            "Explore the portfolio of Yen Cheng Lin — open-source projects, Raycast extensions, and web apps built with Next.js and modern technologies.",
+        description: "Explore the portfolio of Oliver",
         alternates: {
             canonical: "https://yencheng.dev/portfolio",
         },
         openGraph: {
-            title: "Portfolio — Yen Cheng Lin",
+            title: "Portfolio — Oliver Jen",
             description:
                 "Open-source projects, Raycast extensions, and web apps built with Next.js.",
             url: "https://yencheng.dev/portfolio",
         },
     },
+
     travel: {
         title: "Travel",
         description:
-            "Travel map and flight history of Yen Cheng Lin — places visited and routes around the world.",
+            "Travel map and flight history of Oliver Jen — places visited and routes around the world.",
         alternates: {
             canonical: "https://yencheng.dev/travel",
         },
         openGraph: {
-            title: "Travel — Yen Cheng Lin",
+            title: "Travel — Oliver Jen",
             description:
                 "Travel map and flight history — places visited and routes around the world.",
             url: "https://yencheng.dev/travel",
         },
     },
-    live: {
-        title: "Live Shows",
-        description:
-            "A timeline and interactive Taiwan venue map of live shows attended by Yen Cheng Lin.",
-        alternates: {
-            canonical: "https://yencheng.dev/live",
-        },
-        openGraph: {
-            title: "Live Shows — Yen Cheng Lin",
-            description:
-                "Live show memories organized by date and venue across Taiwan.",
-            url: "https://yencheng.dev/live",
-        },
-    },
-    raycast: {
-        title: "Raycast Extensions",
-        description:
-            "Raycast extensions built and published by Yen Cheng Lin, a Raycast Ambassador from Taiwan.",
-        alternates: {
-            canonical: "https://yencheng.dev/raycast",
-        },
-        openGraph: {
-            title: "Raycast Extensions — Yen Cheng Lin",
-            description:
-                "Raycast extensions built and published by Yen Cheng Lin, a Raycast Ambassador from Taiwan.",
-            url: "https://yencheng.dev/raycast",
-        },
-    },
+
     footer: {
         title: "Contact",
         description:
-            "Get in touch with Yen Cheng Lin — find links to GitHub, LinkedIn, Twitter, and more.",
+            "Get in touch with Oliver Jen — find links to GitHub, LinkedIn, Twitter, and more.",
         robots: {
             index: false,
         },
@@ -90,6 +60,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
     const { section } = await params;
     const slug = section?.[0];
+
     return SECTION_METADATA[slug ?? ""] ?? {};
 }
 
@@ -105,23 +76,16 @@ export default function Home() {
             <Suspense fallback={null}>
                 <HomeCarousel>
                     <CarouselItem>
-                        <Header></Header>
-                        <Banner></Banner>
+                        <Header />
+                        <Banner />
                     </CarouselItem>
+
                     <CarouselItem>
-                        <Portfolio></Portfolio>
+                        <Portfolio />
                     </CarouselItem>
-                    <CarouselItem className="flex h-screen max-h-screen flex-col overflow-hidden">
-                        <Travel></Travel>
-                    </CarouselItem>
-                    <CarouselItem className="flex h-screen max-h-screen flex-col overflow-hidden">
-                        <Live />
-                    </CarouselItem>
+
                     <CarouselItem>
-                        <Raycast></Raycast>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <Footer></Footer>
+                        <Footer />
                     </CarouselItem>
                 </HomeCarousel>
             </Suspense>
